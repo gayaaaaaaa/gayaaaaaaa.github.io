@@ -1,12 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Moon, Sun, PlusCircle } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
 interface NavbarProps {
-  onNewNote?: () => void;
 }
 
-export default function Navbar({ onNewNote }: NavbarProps) {
+export default function Navbar({}: NavbarProps) {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
@@ -33,27 +32,6 @@ export default function Navbar({ onNewNote }: NavbarProps) {
         </div>
 
         <div className="flex items-center gap-2">
-          <Button
-            variant="default"
-            size="default"
-            className="rounded-full hidden sm:flex"
-            onClick={onNewNote}
-            data-testid="button-new-note-nav"
-          >
-            <PlusCircle className="mr-2 h-4 w-4" />
-            新增筆記
-          </Button>
-          
-          <Button
-            variant="default"
-            size="icon"
-            className="rounded-full sm:hidden"
-            onClick={onNewNote}
-            data-testid="button-new-note-nav-mobile"
-          >
-            <PlusCircle className="h-4 w-4" />
-          </Button>
-
           <Button
             variant="ghost"
             size="icon"
